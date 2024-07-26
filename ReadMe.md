@@ -255,6 +255,7 @@ Groups are not included in claims by default (with Azure/Entra anyway).
  - Find your app that you set up and click into it
  - On the left menu find **Token configuration** and click into it
  - Click **Add groups  claim** and choose how you want the group information displayed (the default is the group's ObjectID, but you can change it to group name if this works better).
+   - You want to add **ID** claims, not Access or SAML.
 
 Users will need to log in again for the group claims to show up. If you are testing, you may want to open a new private browser tab and log in again to see them.
 
