@@ -260,3 +260,6 @@ Groups are not included in claims by default (with Azure/Entra anyway).
 Users will need to log in again for the group claims to show up. If you are testing, you may want to open a new private browser tab and log in again to see them.
 
 Keep in mind that the list of claims that you can see in the code is limited, so users with a large number of group memberships may be missing some due to them being skipped due to these size restrictions.
+
+## Documentation for optional claims and what their potential values might be (Entra specific)
+https://learn.microsoft.com/en-us/entra/identity-platform/optional-claims-reference
