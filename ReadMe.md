@@ -253,9 +253,9 @@ Groups are not included in claims by default (with Azure/Entra anyway).
  - Go to Entra ID
  - On the left find and click **App Registrations**
  - Find your app that you set up and click into it
- - On the left menu find **Manifest** and click into it
- - Find the line that says `groupMembershipClaims": null,` and change this to `groupMembershipClaims": "SecurityGroup",`
-
-This will have the claims include group memberships *as Azure/Entra ObjectIDs*. You'll want to iterate through the list of claims where the claim type is `groups`, and compare ObjectIds to see if a user is a member of a specific group.
+ - On the left menu find **Token configuration** and click into it
+ - Click **Add groups  claim** and choose how you want the group information displayed (the default is the group's ObjectID, but you can change it to group name if this works better).
 
 Users will need to log in again for the group claims to show up. If you are testing, you may want to open a new private browser tab and log in again to see them.
+
+Keep in mind that the list of claims that you can see in the code is limited, so users with a large number of group memberships may be missing some due to them being skipped due to these size restrictions.
