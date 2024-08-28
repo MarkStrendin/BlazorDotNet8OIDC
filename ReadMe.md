@@ -205,9 +205,8 @@ Add to the bottom:
 @using Microsoft.AspNetCore.Components.Authorization
 ```
 
-## /Referring to user data in code
-
-In Blazor/Razor pages
+# Referring to user data in code
+## In Blazor/Razor pages
 ```cs
 @using System.Security.Claims
 
@@ -246,7 +245,7 @@ In Blazor/Razor pages
  </AuthorizeView>
 ```
 
-In C# code on a Blazor page
+## In C# code on a Blazor page
 ```cs
 @page "/oidcexample"
 @using System.Security.Claims
