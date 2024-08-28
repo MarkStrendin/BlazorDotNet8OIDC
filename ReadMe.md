@@ -246,6 +246,35 @@ In Blazor/Razor pages
  </AuthorizeView>
 ```
 
+In C# code on a Blazor page
+```cs
+@page "/oidcexample"
+@using System.Security.Claims
+
+@code {
+
+    [Inject]
+    AuthenticationStateProvider? AuthenticationStateProvider { get; set;}
+
+    protected override async Task OnInitializedAsync()
+    { 
+        if (AuthenticationStateProvider != null)
+        {
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            ClaimsPrincipal user = authState.User;
+            
+            Console.WriteLine($"Hello {(user?.Identity?.Name ?? "Unknown")}!");                        
+            Console.WriteLine("Your claims are:");
+            foreach(Claim claim in user?.Claims ?? new List<Claim>())
+            {
+                Console.WriteLine($"Type: {claim.Type} \t Value: {claim.Value} \t Issuer: {claim.Issuer}");
+            }
+        }
+    }
+
+}       
+```
+
 # How to get group memberships in your claims
 Groups are not included in claims by default (with Azure/Entra anyway).
 
